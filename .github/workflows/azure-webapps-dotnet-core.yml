@@ -54,11 +54,11 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-        working-directory: ./${{ env.AZURE_WEBAPP_NAME }}
+        working-directory: ./asp_env_test_pub
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        working-directory: ./${{ env.AZURE_WEBAPP_NAME }}
+        working-directory: ./asp_env_test_pub
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
