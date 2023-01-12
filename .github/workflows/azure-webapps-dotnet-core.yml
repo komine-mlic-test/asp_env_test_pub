@@ -59,6 +59,7 @@ jobs:
         
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+        working-directory: ./${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.Test
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
